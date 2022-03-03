@@ -262,6 +262,7 @@ function drawRadiusLine(scale, gridLineOpts, radius, index) {
 	ctx.save();
 	ctx.strokeStyle = lineColor;
 	ctx.lineWidth = lineWidth;
+	ctx.fillStyle = 'rgba(192, 201, 213, 0.5)';
 	if (ctx.setLineDash) {
 		ctx.setLineDash(gridLineOpts.borderDash || []);
 		ctx.lineDashOffset = gridLineOpts.borderDashOffset || 0.0;
@@ -281,6 +282,7 @@ function drawRadiusLine(scale, gridLineOpts, radius, index) {
 			ctx.lineTo(pointPosition.x, pointPosition.y);
 		}
 	}
+	ctx.fill();
 	ctx.closePath();
 	ctx.stroke();
 	ctx.restore();
